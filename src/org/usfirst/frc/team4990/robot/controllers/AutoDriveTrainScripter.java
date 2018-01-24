@@ -7,7 +7,7 @@ import java.util.Queue;
 
 //You shouldn't fuck with this if you don't know what you're doing
 
-//Well I do know what I'm doing I think
+
 
 public class AutoDriveTrainScripter {
 	
@@ -88,14 +88,14 @@ public class AutoDriveTrainScripter {
 			private boolean done;//If it's done or not
 			public T_Package(DriveTrain d, double degrees) {
 				this.dt = d;
-				this.distance = (degrees / 360) * Math.PI * 46.0208333;//Converts degrees to distance based on radius of 23.5 inches
+				this.distance = (degrees / 360) * Math.PI * 23.5;//Converts degrees to distance based on diameter of 23.5 inches
 				this.done = false;
 				this.dt.resetDistanceTraveled();
 			}
 			
 			public void update() {
 				System.out.println(this.dt.getLeftDistanceTraveled() + " " + this.distance);
-				if (this.dt.getLeftDistanceTraveled() < this.distance - (1/6)) {
+				if (this.dt.getLeftDistanceTraveled() < this.distance - (1/6)) {//Wait what if distance is negative
 					dt.setSpeed(0.2, -0.2);
 				}
 				else if (this.dt.getLeftDistanceTraveled() < this.distance) {
