@@ -5,9 +5,18 @@ import org.usfirst.frc.team4990.robot.controllers.AutoDriveTrainScripter;
 
 public class SimpleAutoDriveTrainScripter extends AutoDriveTrainScripter {
 	
+	public enum StartingPosition {LEFT, MID, RIGHT};
+	
 	protected void init() {
-		forwardDistance(3.0);
-		turnDistance(90);
+		StartingPosition position = StartingPosition.LEFT;
+		switch(position) {
+		case LEFT:
+			break;
+		case MID:
+			break;
+		case RIGHT:
+			break;
+		}
 	}
 	
 	// Do not modify below por favor (this means "please" in Spanish)
