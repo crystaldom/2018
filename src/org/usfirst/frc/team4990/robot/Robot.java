@@ -8,6 +8,7 @@ import org.usfirst.frc.team4990.robot.controllers.TeleopDriveTrainController;
 import org.usfirst.frc.team4990.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4990.robot.subsystems.F310Gamepad;
 import org.usfirst.frc.team4990.robot.subsystems.motors.TalonMotorController;
+import org.usfirst.frc.team4990.robot.controllers.SimpleAutoDriveTrainScripter.StartingPosition;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -43,7 +44,8 @@ public class Robot extends IterativeRobot {
     }
 
     public void autonomousInit() {
-    	autoScripter = new SimpleAutoDriveTrainScripter(driveTrain);
+    	StartingPosition s = StartingPosition.LEFT;
+    	autoScripter = new SimpleAutoDriveTrainScripter(driveTrain, s);
     }
     
     /**
